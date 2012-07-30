@@ -1,0 +1,40 @@
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+	position: relative;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.users-wrapper {
+	border: 1px solid #efefef;
+	width: 300px;
+	float: right;
+	margin: 30px;
+}
+
+.users-wrapper .users-list .user-item .user-label {
+	display: inline-block;
+	width: 8px;
+	height: 8px;
+	border-radius: 4px;
+	margin-right: 5px;
+}
+
+
+ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 10px;
+}
+
+ul li {
+	padding: 5px 0;
+}
+
+.click-circle {
+	width: 0px;
+	height: 0px;
+	border-radius: 50px;
+	position: absolute;
+}
