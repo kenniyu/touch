@@ -48,16 +48,18 @@ nowjs.on('connect', function() {
 	// get user data
 	var user = this.user,
 			clientId = user.clientId,
-			username = 'needylover' + usersCount,
+			username = 'user' + usersCount,
 			clientCookieId = get_cookie(user.cookie),
 			color = '#'+Math.floor(Math.random()*16777215).toString(16);
 			
 	// set user id and name
 	userKey = clientId;
+	console.log(color);
 	userValue = {
 		id: clientId,
 		username: username,
-		color: color
+		color: color,
+		animationDelay: 1000
 	}
 	
 	
@@ -92,7 +94,19 @@ function updateUsersList() {
 everyone.now.submitClick = function(clickX, clickY) {
 	var clientId = this.user.clientId,
 			userObj	= usersHash[clientId];
-	everyone.exclude(clientId).now.showClick(clickX, clickY, userObj.color);
+	everyone.now.showClick(clickX, clickY, userObj);
+}
+
+everyone.now.submitMove = function(moveX, moveY) {
+	var clientId = this.user.clientId,
+			userObj	= usersHash[clientId];
+	everyone.now.showMove(moveX, moveY, userObj);
+}
+
+everyone.now.submitAnimation = function(animationInput) {
+	var clientId = this.user.clientId,
+			userObj	= usersHash[clientId];
+	userObj.animationDelay = animationInput;
 }
 
 // encode HTML

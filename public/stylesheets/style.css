@@ -4,13 +4,26 @@ body {
 	width: 100%;
 	margin: 0;
 	padding: 0;
+	cursor: pointer;
+	color: #000;
+}
+
+body.dim {
+	background-color: #000;
+	color: #fff;
 }
 
 .users-wrapper {
 	border: 1px solid #efefef;
-	width: 300px;
+	opacity: 0.9;
+/*	width: 300px;*/
 	float: right;
 	margin: 30px;
+	border-radius: 5px;
+}
+
+.users-wrapper.dim {
+	border: 1px solid #333;
 }
 
 .users-wrapper .users-list .user-item .user-label {
@@ -19,6 +32,27 @@ body {
 	height: 8px;
 	border-radius: 4px;
 	margin-right: 5px;
+}
+
+.users-wrapper .options input {
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-shadow: inset 0 1px 0 #ccc;
+	padding: 7px 5px;
+	width: 200px;
+	z-index: 9999;
+	font-size: 13px;
+}
+
+.users-wrapper .options a {
+	font-size: 12px;
+	padding: 5px;
+	z-index: 9999;
+	cursor: pointer;
+	color: #00b;
+}
+.users-wrapper .options a:active, .users-wrapper .options a:hover {
+	color: #BC65E6;
 }
 
 
@@ -37,4 +71,13 @@ ul li {
 	height: 0px;
 	border-radius: 50px;
 	position: absolute;
+}
+
+.user-cursor {
+	position: absolute;
+	width: 30px;
+	height: 30px;
+	border-radius: 15px;
+	box-shadow: 0 0 3px #999;
+	z-index: 100;
 }
